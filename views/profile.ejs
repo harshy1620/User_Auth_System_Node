@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://kit.fontawesome.com/16fcd17eb5.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+          <div class="user-icon">
+              <i class="fa-solid fa-user" style="color: #fefeff;" ></i>
+              <p class="app-name">User Authentication System</p>
+           </div>
+           <a href="/signout">
+               <button class="button" id="form-open">Logout</button>
+           </a>
+      </nav>
+    </header>
+      <!-- Home -->
+    <section class="home">
+          <div class="textarea">
+              <div class="welcome">
+                   <h3>Hii, 
+                       <%=user.email%> <br>
+                        Welcome to your profile!
+                   </h3>
+             </div>
+          </div>
+            <div class="reset-pass">
+                 <a href="/resetpass">
+                   <button class="button-reset" id="form-open">Reset Password</button>
+                 </a>
+            <div>
+  
+     </section>

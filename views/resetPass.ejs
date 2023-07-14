@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/16fcd17eb5.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/resetPass.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+          <div class="user-icon">
+             <i class="fa-solid fa-user" style="color: #fefeff;" ></i>
+              <p class="app-name">User Authentication System</p>
+         </div>
+         <a href="/profile">
+          <button class="button" id="form-open">Go to your profile</button>
+        </a>
+        </nav>
+      </header>
+      <!-- Home -->
+      <section class="home">
+        
+          <!-- login-Form -->
+          <div class="reset_form">
+            <form action="/resetpass" method="post">
+              <h2>Reset your Password</h2>
+              <div class="input_box">
+                <i class="fa-solid fa-lock" style="color: #949494;"></i>
+                <input type="password" name="password" placeholder="Create new password" required id="password1" />
+                <i class="fa-regular fa-eye-slash "  style="color: #a9aaad;" onClick="toggle1()"></i> 
+             </div>
+              <div class="input_box">
+                <i class="fa-solid fa-lock" style="color: #949494;"></i>
+                <input type="password" name="confirm_password" placeholder="Confirm password" required id="password2" />  
+                <i class="fa-regular fa-eye-slash "  style="color: #a9aaad;" onClick="toggle2()"></i>           
+              </div>
+               <div class="reset-button">
+              <button type="submit" class="button-reset">Reset Now</button>
+        
+            </form>
+          </div>
+        
+      </section>
+
+      
+      <script>
+
+        // for password field
+        var state1=false;
+        function toggle1(){
+          if(state1){ 
+        document.querySelector("#password1").setAttribute("type", "password");
+        state1=false;
+    }
+    else{
+        document.querySelector("#password1").setAttribute("type", "text");
+        state1=true;
+    }
+  }
+
+  // for confirm password field
+    var state2=false;
+        function toggle2(){
+          if(state2){ 
+        document.querySelector("#password2").setAttribute("type", "password");
+        state2=false;
+    }
+    else{
+        document.querySelector("#password2").setAttribute("type", "text");
+        state2=true;
+    }
+}
+      </script>
+</body>
+</html>

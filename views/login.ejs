@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/16fcd17eb5.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+          <div class="user-icon">
+          <i class="fa-solid fa-user" style="color: #fefeff;" ></i>
+    <p class="app-name">User Authentication System</p>
+  </div>
+  <a href="/">
+    <button class="button" id="form-open">Signup</button>
+  </a>
+         
+        </nav>
+      </header>
+      <!-- Home -->
+      <section class="home">
+        
+          <!-- login-Form -->
+          <div class="login_form">
+            <form action="/login" method="post">
+              <h2>Login</h2>
+              <div class="input_box">
+                <i class="fa-regular fa-envelope" style="color: #8e8f90;"></i> 
+                <input type="email" name="email" placeholder="Enter your email" required />
+             </div>
+              <div class="input_box">
+                <i class="fa-solid fa-lock" style="color: #949494;"></i>
+                <input type="password" name="password" placeholder="Enter Your password" required id="password" />  
+                <i class="fa-regular fa-eye-slash "  style="color: #a9aaad;" onClick="toggle()"></i>           
+               </div>
+                   <div class="login-button">
+              <button type="submit" class="button-login">Login Now</button>
+              <div>
+                <a href="/auth/google">Login with Google</a>
+              </div>
+            </div>
+            <div class="donthaveaccount">Don't have an account? <a href="/" class="signuplink">Signup</a>
+              </div>
+            </form>
+          </div>
+        
+      </section>
+
+
+
+      
+      <!-- // for password field -->
+      <script>
+      var state=false;
+      function toggle(){
+        if(state){ 
+      document.querySelector("#password").setAttribute("type", "password");
+      state=false;
+  }
+  else{
+      document.querySelector("#password").setAttribute("type", "text");
+      state=true;
+  }
+}
+</script>
+</body>
+</html>

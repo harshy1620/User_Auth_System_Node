@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/16fcd17eb5.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+          <div class="user-icon">
+          <i class="fa-solid fa-user" style="color: #fefeff;" ></i>
+    <p class="app-name">User Authentication System</p>
+  </div>
+  <a href="/login">
+    <button class="button" id="form-open">Login</button>
+  </a>
+        </nav>
+      </header>
+      <!-- Home -->
+      <section class="home">
+        
+          <!-- Signup Form -->
+          <div class="signup_form">
+            <form action="/signup" method="post">
+              <h2>Signup</h2>
+              <div class="input_box">
+                <i class="fa-regular fa-envelope" style="color: #8e8f90;"></i> 
+                <input type="email" name="email" placeholder="Enter your email" required  />
+             </div>
+              <div class="input_box">
+                <i class="fa-solid fa-lock" style="color: #949494;"></i>
+                <input type="password" name="password" placeholder="Create password" required id="password1"/>
+                <i class="fa-regular fa-eye-slash icon" style="color: #a9aaad;"  onClick="toggle1()"></i>
+              </div>
+              <div class="input_box">
+                <i class="fa-solid fa-lock" style="color: #949494;"></i>
+                <input type="password" name="confirm_password" placeholder="Confirm password" required id="password2"/>  
+                <i class="fa-regular fa-eye-slash "  style="color: #a9aaad;" onClick="toggle2()"></i>           
+               </div>
+               <div class="sign-up-button">
+              <button type="submit" class="button-signup">Signup Now</button>
+            <div class="signupwithgoogle">
+              <a href="/auth/google">Login with Google</a>
+            </div>
+            </div>
+            <div class="alreadyaccount">Already have an account? <a href="/login" id="login">Login</a>
+              </div>
+            </form>
+          </div>
+        
+      </section>
+     
+
+      <script>
+
+        // for password field
+        var state1=false;
+        function toggle1(){
+          if(state1){ 
+        document.querySelector("#password1").setAttribute("type", "password");
+        state1=false;
+    }
+    else{
+        document.querySelector("#password1").setAttribute("type", "text");
+        state1=true;
+    }
+  }
+
+  // for confirm password field
+    var state2=false;
+        function toggle2(){
+          if(state2){ 
+        document.querySelector("#password2").setAttribute("type", "password");
+        state2=false;
+    }
+    else{
+        document.querySelector("#password2").setAttribute("type", "text");
+        state2=true;
+    }
+}
+      </script>
+</body>
+</html>
